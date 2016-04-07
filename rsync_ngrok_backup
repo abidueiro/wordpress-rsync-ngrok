@@ -1,0 +1,5 @@
+tar -zcvf wordpress_backup.tar.gz /home/user/wwww/
+
+./ngrok tcp 22
+
+rsync -zvh -e "ssh -p 10182" /home/user/wordpress_backup.tar.gz  user@0.tcp.ngrok.io:/home/user 
